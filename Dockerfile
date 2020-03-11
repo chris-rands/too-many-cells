@@ -55,6 +55,8 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
+ENV R_HOME=/usr/local/lib/R
+
 RUN R -e "install.packages(c('cowplot', 'ggplot2', 'jsonlite'), repos='http://cran.us.r-project.org/')" \
     && Rscript -e "source('http://bioconductor.org/biocLite.R')" -e "biocLite('edgeR')"
 # NOTICE THESE LINES
